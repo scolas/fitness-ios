@@ -30,10 +30,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             NotificationsPostLikeTableViewCell.self,
             forCellReuseIdentifier: NotificationsPostLikeTableViewCell.identifier
         )
+        
         table.register(
             NotificationsUserFollowTableViewCell.self,
             forCellReuseIdentifier: NotificationsUserFollowTableViewCell.identifier
         )
+        
         table.register(
             NotificationsPostCommentTableViewCell.self,
             forCellReuseIdentifier: NotificationsPostCommentTableViewCell.identifier
@@ -128,7 +130,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         
         case .postLike(let postName):
             guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: NotificationsPostLikeTableViewCell.identifier,
+                withIdentifier: NotificationsPostLikeTableViewCell.identifier,
                     for: indexPath
             ) as? NotificationsPostLikeTableViewCell else {
                 return tableView.dequeueReusableCell(
@@ -137,6 +139,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 )
             }
             cell.configure(with: postName, model: model)
+            cell.delegate = self
             return cell
             
             
@@ -166,6 +169,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                 )
             }
             cell.configure(with: postName, model: model)
+            cell.delegate = self
             return cell
         }
         
@@ -211,22 +215,58 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
 
 extension NotificationViewController: NotificationsUserFollowTableViewCellDelegate{
     func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapFollowFor username: String) {
-        
-       /* let vc = ProfileViewController2(user: User(username: username,
-                                                   profilePictureURL: nil,
-                                                   identifier: "123"))
-        vc.title = username.uppercased()
-        navigationController?.pushViewController(vc, animated: true)*/
-        
-    }
-
-    func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String) {
         DatabaseManager.shared.follow(username: username) { (success) in
             if !success {
                 print("follow failed")
             }
         }
         
+        
+        
+    }
+
+    func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String) {
+        let vc = ProfileViewController2(user: User(username: username,
+                                                   profilePictureURL: nil,
+                                                   identifier: "123"))
+        vc.title = username.uppercased()
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
+extension NotificationViewController: NotificationsPostLikeTableViewCellDelegate {
+    func notificationsPostLikeTableViewCell(_ cell: NotificationsPostLikeTableViewCell, didTapPostWith identifier: String) {
+        openPost(with: identifier)
+    }
+}
+
+
+extension NotificationViewController: NotificationsPostCommentTableViewCellDelegate {
+    func notificationsPostCommentTableViewCell(_ cell: NotificationsPostCommentTableViewCell, didTapPost identifier: String) {
+        openPost(with: identifier)
+    }
+}
+
+extension NotificationViewController{
+    func openPost(with identifier: String){
+        //reslove postmodel from database
+        let post = PostModel(
+            identifier: UUID().uuidString,
+            user: User(
+                username: "kanyewest",
+                profilePictureURL: nil,
+                identifier: UUID().uuidString
+            ), postType: .photo,
+            likecount: [],
+             comments: [],
+             createdDate: Date(),
+             taggedUsers: [],
+            category: BodyPart.abs,
+             owner: User(username: "scolas", profilePictureURL: URL(string: ""), identifier: "test"))
+        let vc = PostViewController(model: post)
+        vc.title = "Post"
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+}

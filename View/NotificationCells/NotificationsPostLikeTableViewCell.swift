@@ -7,10 +7,18 @@
 
 import UIKit
 
+protocol NotificationsPostLikeTableViewCellDelegate: AnyObject {
+    func notificationsPostLikeTableViewCell(_ cell: NotificationsPostLikeTableViewCell,
+                                            didTapPostWith identifier: String)
+}
+
 class NotificationsPostLikeTableViewCell: UITableViewCell {
 
     
     static let identifier = "NotificationsPostLikeTableViewCell"
+    weak var delegate: NotificationsPostLikeTableViewCellDelegate?
+    
+    var postID: String?
     
     private let postThumbnailImageView: UIImageView = {
         let imageView = UIImageView()
@@ -40,9 +48,19 @@ class NotificationsPostLikeTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.addSubview(datelabel)
         selectionStyle = .none
+        postThumbnailImageView.isUserInteractionEnabled = true
+        let tap = UIGestureRecognizer(target: self, action: #selector(didTapPost))
+        postThumbnailImageView.addGestureRecognizer(tap)
         
     }
-
+    
+    @objc private func didTapPost(){
+        guard let id = postID else {
+            return
+        }
+        delegate?.notificationsPostLikeTableViewCell(self, didTapPostWith: id)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError()
     }
@@ -50,7 +68,7 @@ class NotificationsPostLikeTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let iconSize: CGFloat = 50
+        //let iconSize: CGFloat = 50
         postThumbnailImageView.frame = CGRect(
             x: contentView.width - 50,
             y: 3,
@@ -94,9 +112,10 @@ class NotificationsPostLikeTableViewCell: UITableViewCell {
         datelabel.text = nil
     }
     
-    func configure(with psotFileName: String, model: Notification){
+    func configure(with postFileName: String, model: Notification){
         postThumbnailImageView.image = UIImage(named: "test")
         label.text = model.text
         datelabel.text = .date(with: model.date)
+        postID = postFileName
     }
 }

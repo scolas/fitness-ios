@@ -38,7 +38,7 @@ class Notification {
         let first = Array(0...5).compactMap({
             Notification(
                 text: "Something happened: \($0)",
-                type: .postComment(postName: "sdfsdfsd"),
+                type: .postComment(postName: "Comment sdfsdfsd"),
                 date: Date()
             )
         })
@@ -46,7 +46,7 @@ class Notification {
         let second = Array(0...5).compactMap({
             Notification(
                 text: "Something happened: \($0)",
-                type: .userFollow(username: "sdfsdfsd"),
+                type: .userFollow(username: "Follow sdfsdfsd"),
                 date: Date()
             )
         })
@@ -54,7 +54,7 @@ class Notification {
         let third = Array(0...5).compactMap({
             Notification(
                 text: "Something happened: \($0)",
-                type: .postLike(postName: "sdfsdfsd"),
+                type: .postLike(postName: "Like sdfsdfsd"),
                 date: Date()
             )
         })

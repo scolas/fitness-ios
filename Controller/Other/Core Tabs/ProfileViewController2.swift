@@ -8,9 +8,10 @@
 import UIKit
 import SDWebImage
 class ProfileViewController2: UIViewController {
-    private var collectionView:UICollectionView?
+    private var collectionView: UICollectionView?
     
-    private var userPosts = [UserPost]()
+    private var userPosts2 = [UserPost]()
+    private var userPosts = [PostModel]()
     var filterBody = BodyPart.legs
     var user: User
     
@@ -31,7 +32,8 @@ class ProfileViewController2: UIViewController {
         view.backgroundColor = .systemBackground
        
         
-        userPosts = fetchData(ca: filterBody)
+        //userPosts = fetchData(ca: filterBody)
+        userPosts = PostModel.mockModels()
         configureNavigationBar()
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 1
@@ -124,6 +126,7 @@ extension ProfileViewController2: UICollectionViewDelegate, UICollectionViewData
         collectionView.deselectItem(at: indexPath, animated: true)
         // get the model and open post controller
         //let model = userPosts[indexPath.row]
+        //let vc = PostViewController(model: userPosts[indexPath.row])
         let vc = PostViewController(model: userPosts[indexPath.row])
         vc.title = "Workout"
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -175,28 +178,32 @@ extension ProfileViewController2: ProfileTabCollectionReusableViewDelegate{
     
     func didTapGridButtonTab() {
         //
-        userPosts = fetchData(ca: BodyPart.legs)
+        //userPosts = fetchData(ca: BodyPart.legs)
+        userPosts = PostModel.mockModels()
         collectionView?.reloadData()
         print("cardio tapped")
     }
     
     func didTapTaggedButtonTab() {
         //
-        userPosts = fetchData(ca: BodyPart.chest)
+        //userPosts = fetchData(ca: BodyPart.chest)
+        userPosts = PostModel.mockModels()
         collectionView?.reloadData()
         print("cardio tapped")
     }
     
     func didTapCardioButtonTab() {
         //
-        userPosts = fetchData(ca: BodyPart.abs)
+        //userPosts = fetchData(ca: BodyPart.abs)
+        userPosts = PostModel.mockModels()
         collectionView?.reloadData()
         print("cardio tapped")
     }
     
     func didTapWeightButtonTab() {
         
-        userPosts = fetchData(ca: BodyPart.other)
+        //userPosts = fetchData(ca: BodyPart.other)
+        userPosts = PostModel.mockModels()
         collectionView?.reloadData()
         print("weight tapped")
     }

@@ -6,7 +6,8 @@
 //
 enum PostRenderType {
     //case header(provider: User)
-    case primarycontent(provider: UserPost) // post
+    //case primarycontent(provider: UserPost) // post
+    case primarycontent(provider: PostModel)
     case actions(provider: String) //like cmment share
     case comments(comments: [PostComment])
 }
@@ -19,7 +20,7 @@ struct PostRenderViewModel {
 import UIKit
 
 class PostViewController: UIViewController {
-    private let model: UserPost?
+    private let model: PostModel
     
     private var renderModels = [PostRenderViewModel]()
     
@@ -37,7 +38,7 @@ class PostViewController: UIViewController {
         return tableView
     }()
     
-    init(model: UserPost?) {
+    init(model: PostModel) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
         configureModels()
@@ -48,13 +49,15 @@ class PostViewController: UIViewController {
     }
     
     private func configureModels(){
-        guard let userPostModel = self.model else {
-            return
-        }
+        //guard let userPostModel = self.model else {
+          //  return
+        //}
+      
+        
         //Header
        // renderModels.append(PostRenderViewModel(renderType: .header(provider: userPostModel.owner)))
         //Post
-        renderModels.append(PostRenderViewModel(renderType: .primarycontent(provider: userPostModel)))
+        renderModels.append(PostRenderViewModel(renderType: .primarycontent(provider: model)))
         //Actions
         renderModels.append(PostRenderViewModel(renderType: .actions(provider: "")))
         //comments

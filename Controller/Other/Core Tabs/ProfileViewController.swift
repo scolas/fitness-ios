@@ -10,7 +10,8 @@ import SDWebImage
 class ProfileViewController: UIViewController {
     private var collectionView:UICollectionView?
     
-    private var userPosts = [UserPost]()
+    //private var userPosts = [UserPost]()
+    private var userPosts = [PostModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +105,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         collectionView.deselectItem(at: indexPath, animated: true)
         // get the model and open post controller
         //let model = userPosts[indexPath.row]
-        let vc = PostViewController(model: nil)
+        let model = userPosts[indexPath.row]
+        let vc = PostViewController(model: model)
         vc.title = "Post"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)

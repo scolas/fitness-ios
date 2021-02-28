@@ -40,9 +40,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
 
-    public func configure(with model: UserPost){
-        let url = model.thumbnailImage
-        photoImageView.sd_setImage(with: url, completed: nil)
+    //public func configure(with model: UserPost){
+    public func configure(with model: PostModel){
+        //let url = model.thumbnailImage
+        let url = model.fileName
+        photoImageView.sd_setImage(with: URL(string: url), completed: nil)
         /* this is how we download the image ourself but we would have to handle the cache/ so we will bring in framework to handle this for us
         let task = URLSession.shared.dataTask(with: url, completionHandler: {data, _, _in
             photoImageView.image = UIImage(data: data!)

@@ -15,13 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        AuthManager.shared.signOut { success in
+        /*AuthManager.shared.signOut { success in
             if success {
                 print("user log out")
             } else {
                 print("user not logged out")
             }
-        }
+        }*/
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = TabBarViewController()

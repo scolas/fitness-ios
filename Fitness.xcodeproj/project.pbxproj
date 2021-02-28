@@ -15,6 +15,7 @@
 		D22AC40425A79893003FD975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D22AC40225A79893003FD975 /* LaunchScreen.storyboard */; };
 		D22AC40F25A79893003FD975 /* FitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22AC40E25A79893003FD975 /* FitnessTests.swift */; };
 		D22AC41A25A79893003FD975 /* FitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22AC41925A79893003FD975 /* FitnessUITests.swift */; };
+		D230E22C25DCAA56000B71DF /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230E22B25DCAA56000B71DF /* PostModel.swift */; };
 		D2443E1325D897350029AA69 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2443E1225D897350029AA69 /* NotificationsUserFollowTableViewCell.swift */; };
 		D2443E1825D898040029AA69 /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2443E1725D898040029AA69 /* NotificationsPostLikeTableViewCell.swift */; };
 		D2443E1D25D8981F0029AA69 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2443E1C25D8981F0029AA69 /* NotificationsPostCommentTableViewCell.swift */; };
@@ -90,6 +91,7 @@
 		D22AC41525A79893003FD975 /* FitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22AC41925A79893003FD975 /* FitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessUITests.swift; sourceTree = "<group>"; };
 		D22AC41B25A79893003FD975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D230E22B25DCAA56000B71DF /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		D2443E1225D897350029AA69 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		D2443E1725D898040029AA69 /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
 		D2443E1C25D8981F0029AA69 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		D27E7F2725AA2058009DD069 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D230E22B25DCAA56000B71DF /* PostModel.swift */,
 				D2C7471125B3E7DD005435E9 /* Models.swift */,
 				D280357525D777FC00D6C1DB /* Notifications.swift */,
 			);
@@ -603,6 +606,7 @@
 				D27E7FB125AB4FDA009DD069 /* DatabaseManager.swift in Sources */,
 				D2443E1325D897350029AA69 /* NotificationsUserFollowTableViewCell.swift in Sources */,
 				D2C746FA25B3E540005435E9 /* ProfileTabCollectionReusableView.swift in Sources */,
+				D230E22C25DCAA56000B71DF /* PostModel.swift in Sources */,
 				D27E7FBB25AB52D7009DD069 /* Extentions.swift in Sources */,
 				D2C18ABD25B68CC4008F35F7 /* WorkoutViewController.swift in Sources */,
 				D22AC3F825A79892003FD975 /* AppDelegate.swift in Sources */,
