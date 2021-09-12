@@ -33,7 +33,7 @@ class ProfileViewController2: UIViewController {
        
         
         //userPosts = fetchData(ca: filterBody)
-        userPosts = PostModel.mockModels()
+        userPosts = PostModel.mockModels2(part: BodyPart.other)
         configureNavigationBar()
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 1
@@ -179,7 +179,7 @@ extension ProfileViewController2: ProfileTabCollectionReusableViewDelegate{
     func didTapGridButtonTab() {
         //
         //userPosts = fetchData(ca: BodyPart.legs)
-        userPosts = PostModel.mockModels()
+        userPosts = PostModel.mockModels2(part: BodyPart.legs)
         collectionView?.reloadData()
         print("cardio tapped")
     }
@@ -187,7 +187,7 @@ extension ProfileViewController2: ProfileTabCollectionReusableViewDelegate{
     func didTapTaggedButtonTab() {
         //
         //userPosts = fetchData(ca: BodyPart.chest)
-        userPosts = PostModel.mockModels()
+        userPosts = PostModel.mockModels2(part: BodyPart.chest)
         collectionView?.reloadData()
         print("cardio tapped")
     }
@@ -195,7 +195,7 @@ extension ProfileViewController2: ProfileTabCollectionReusableViewDelegate{
     func didTapCardioButtonTab() {
         //
         //userPosts = fetchData(ca: BodyPart.abs)
-        userPosts = PostModel.mockModels()
+        userPosts = PostModel.mockModels2(part: BodyPart.abs)
         collectionView?.reloadData()
         print("cardio tapped")
     }
@@ -203,7 +203,7 @@ extension ProfileViewController2: ProfileTabCollectionReusableViewDelegate{
     func didTapWeightButtonTab() {
         
         //userPosts = fetchData(ca: BodyPart.other)
-        userPosts = PostModel.mockModels()
+        userPosts = PostModel.mockModels2(part: BodyPart.other)
         collectionView?.reloadData()
         print("weight tapped")
     }
@@ -282,10 +282,11 @@ extension ProfileViewController2 {
                         gender: .male,
                         counts: UserCount(followers: 102, following: 99, posts: 5),
                         joinDate: Date())*/
-        let user = User(
+        /*let user = User(
             username: UserDefaults.standard.string(forKey: "username")?.uppercased() ?? "Me",
             profilePictureURL: URL(string: ""),
-            identifier: UserDefaults.standard.string(forKey: "username")?.lowercased() ?? "")
+            identifier: UserDefaults.standard.string(forKey: "username")?.lowercased() ?? "")*/
+        let user = User(username: "", email: "")
         
         let posts = UserPost(identifier: "", postType: .photo, postUrl: URL(string: "https://i.pinimg.com/originals/79/f0/14/79f014a31c85b20aca132e959ba149c6.jpg")!, thumbnailImage: URL(string: "https://i.pinimg.com/originals/79/f0/14/79f014a31c85b20aca132e959ba149c6.jpg")!, caption: nil, likecount: [], comments:[comment1,comment2], createdDate: Date(), taggedUsers: [], category: BodyPart.abs, owner: user)
         

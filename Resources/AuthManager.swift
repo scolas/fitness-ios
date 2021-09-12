@@ -11,7 +11,7 @@ import FirebaseAuth
 
 public class AuthManager{
     static let shared = AuthManager()
-    
+    let auth = Auth.auth()
     
     /// Private constructor
     private init() {}
@@ -35,7 +35,7 @@ public class AuthManager{
 
     /// Represents if user is signed in
     public var isSignedIn: Bool {
-        return Auth.auth().currentUser != nil
+        return auth.currentUser != nil
     }
     
     
@@ -81,6 +81,9 @@ public class AuthManager{
             
         }
     }
+    
+
+    
     
     public func loginUserOld(username: String?, email:String?, password:
         String, completion: @escaping (Bool) -> Void) {

@@ -60,3 +60,37 @@ extension String{
         return self.replacingOccurrences(of: "@", with: "-").replacingOccurrences(of: ".", with: "-")
     }
 }
+
+
+// self.self is whatever object that conforms to codable
+extension Decodable {
+    init?(with dictionary: [String: Any]){
+        guard let data = try? JSONSerialization.data(
+                withJSONObject: dictionary,
+                options: .prettyPrinted
+        ) else{
+            return nil
+        }
+        guard let result = try? JSONDecoder().decode(
+                Self.self,
+                from: data
+        ) else {
+            return nil
+        }
+        self = result
+    }
+}
+
+//alows us to convert models to dictionaries
+extension Encodable{
+    func asDictionary() -> [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else{
+            return nil
+        }
+        let json = try? JSONSerialization.jsonObject(
+            with: data,
+            options: .allowFragments
+        ) as? [String: Any]
+        return json
+    }
+}

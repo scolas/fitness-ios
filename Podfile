@@ -17,6 +17,8 @@ pod 'Firebase/Database'
 pod 'Firebase/Analytics'
 pod 'Firebase/Crashlytics'
 pod 'Firebase/Storage'
+pod 'Firebase/Firestore'
+pod 'TTGTagCollectionView'
 
 
 end

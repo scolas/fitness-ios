@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CBB914B2C5F358048D43CC88 /* Pods_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3147E55177A12F4A113C7DFA /* Pods_Fitness.framework */; };
+		D200C63D261618020014EBE3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D200C63C261618020014EBE3 /* User.swift */; };
 		D22AC3F825A79892003FD975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22AC3F725A79892003FD975 /* AppDelegate.swift */; };
 		D22AC3FA25A79892003FD975 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22AC3F925A79892003FD975 /* SceneDelegate.swift */; };
 		D22AC3FC25A79892003FD975 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22AC3FB25A79892003FD975 /* HomeViewController.swift */; };
@@ -23,8 +24,12 @@
 		D244BDA925D0B8D0002419FB /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244BDA825D0B8D0002419FB /* CaptionViewController.swift */; };
 		D244BDAE25D0C2A9002419FB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244BDAD25D0C2A9002419FB /* TabBarViewController.swift */; };
 		D244BDEB25D4C81A002419FB /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244BDEA25D4C81A002419FB /* HapticsManager.swift */; };
+		D24D2BE625FED24000FA34CF /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24D2BE525FED24000FA34CF /* RadioButton.swift */; };
 		D24ECF3B25B9F4770044BA81 /* BodyPartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24ECF3A25B9F4770044BA81 /* BodyPartCollectionViewCell.swift */; };
 		D26CD4E025C8E995005AA726 /* CreateWorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26CD4DF25C8E995005AA726 /* CreateWorkoutTableViewCell.swift */; };
+		D27357DC25F9A9CC00E1AE1B /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27357DB25F9A9CC00E1AE1B /* VideoCell.swift */; };
+		D27357E125F9A9E600E1AE1B /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27357E025F9A9E600E1AE1B /* UIView+Ext.swift */; };
+		D27357E625F9A9F700E1AE1B /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27357E525F9A9F700E1AE1B /* Search.swift */; };
 		D27E7F4125AB49F5009DD069 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27E7F4025AB49F5009DD069 /* LoginViewController.swift */; };
 		D27E7F4925AB4C03009DD069 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D27E7F4825AB4C03009DD069 /* GoogleService-Info.plist */; };
 		D27E7FAC25AB4F57009DD069 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27E7FAB25AB4F57009DD069 /* AuthManager.swift */; };
@@ -78,6 +83,7 @@
 /* Begin PBXFileReference section */
 		3147E55177A12F4A113C7DFA /* Pods_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08C43DFFDF6A79798A7B185 /* Pods-Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.release.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.release.xcconfig"; sourceTree = "<group>"; };
+		D200C63C261618020014EBE3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D22AC3F425A79892003FD975 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22AC3F725A79892003FD975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D22AC3F925A79892003FD975 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,8 +105,12 @@
 		D244BDA825D0B8D0002419FB /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		D244BDAD25D0C2A9002419FB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D244BDEA25D4C81A002419FB /* HapticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		D24D2BE525FED24000FA34CF /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		D24ECF3A25B9F4770044BA81 /* BodyPartCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartCollectionViewCell.swift; sourceTree = "<group>"; };
 		D26CD4DF25C8E995005AA726 /* CreateWorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		D27357DB25F9A9CC00E1AE1B /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		D27357E025F9A9E600E1AE1B /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		D27357E525F9A9F700E1AE1B /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		D27E7F4025AB49F5009DD069 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D27E7F4825AB4C03009DD069 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D27E7FAB25AB4F57009DD069 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -256,11 +266,21 @@
 			path = "CollectionView Workout";
 			sourceTree = "<group>";
 		};
+		D27357DA25F9A9AD00E1AE1B /* SearchCells */ = {
+			isa = PBXGroup;
+			children = (
+				D27357DB25F9A9CC00E1AE1B /* VideoCell.swift */,
+			);
+			path = SearchCells;
+			sourceTree = "<group>";
+		};
 		D27E7F2725AA2058009DD069 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D200C63C261618020014EBE3 /* User.swift */,
 				D230E22B25DCAA56000B71DF /* PostModel.swift */,
 				D2C7471125B3E7DD005435E9 /* Models.swift */,
+				D27357E525F9A9F700E1AE1B /* Search.swift */,
 				D280357525D777FC00D6C1DB /* Notifications.swift */,
 			);
 			path = Model;
@@ -269,6 +289,7 @@
 		D27E7F2825AA2060009DD069 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D27357DA25F9A9AD00E1AE1B /* SearchCells */,
 				D2443E2125D898330029AA69 /* NotificationCells */,
 				D244BD9F25D0A950002419FB /* Other */,
 				D2C23FD625BF17DD00CA912A /* Post */,
@@ -301,6 +322,7 @@
 				D27E7FB025AB4FDA009DD069 /* DatabaseManager.swift */,
 				D27E7FB525AB5018009DD069 /* StoarageManager.swift */,
 				D27E7FBA25AB52D7009DD069 /* Extentions.swift */,
+				D27357E025F9A9E600E1AE1B /* UIView+Ext.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -374,6 +396,7 @@
 				D2C23FD825BF17F100CA912A /* IGFeedPostGeneralTableViewCell.swift */,
 				D2C23FDA25BF17F100CA912A /* IGFeedPostHeaderTableViewCell.swift */,
 				D2C23FD925BF17F100CA912A /* IGFeedPostTableViewCell.swift */,
+				D24D2BE525FED24000FA34CF /* RadioButton.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -577,6 +600,7 @@
 			files = (
 				D2A1D5EB25C7A66B0026D2C3 /* SearchViewController.swift in Sources */,
 				D2C23FDE25BF17F100CA912A /* IGFeedPostHeaderTableViewCell.swift in Sources */,
+				D200C63D261618020014EBE3 /* User.swift in Sources */,
 				D2C7473B25B3E91F005435E9 /* PostViewController.swift in Sources */,
 				D27E7FB625AB5018009DD069 /* StoarageManager.swift in Sources */,
 				D2C746F525B3E535005435E9 /* ProfileInfoHeaderCollectionReusableView.swift in Sources */,
@@ -592,6 +616,7 @@
 				D22AC3FC25A79892003FD975 /* HomeViewController.swift in Sources */,
 				D2A1D5F025C7AF9B0026D2C3 /* CameraViewController.swift in Sources */,
 				D2C23FDD25BF17F100CA912A /* IGFeedPostTableViewCell.swift in Sources */,
+				D24D2BE625FED24000FA34CF /* RadioButton.swift in Sources */,
 				D244BDA925D0B8D0002419FB /* CaptionViewController.swift in Sources */,
 				D244BDEB25D4C81A002419FB /* HapticsManager.swift in Sources */,
 				D244BDAE25D0C2A9002419FB /* TabBarViewController.swift in Sources */,
@@ -603,10 +628,13 @@
 				D2443E1D25D8981F0029AA69 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				D29188F425B4A6200095DF95 /* ProfileViewController2.swift in Sources */,
 				D2C7470425B3E5E7005435E9 /* EditProfileViewController.swift in Sources */,
+				D27357DC25F9A9CC00E1AE1B /* VideoCell.swift in Sources */,
 				D27E7FB125AB4FDA009DD069 /* DatabaseManager.swift in Sources */,
 				D2443E1325D897350029AA69 /* NotificationsUserFollowTableViewCell.swift in Sources */,
+				D27357E125F9A9E600E1AE1B /* UIView+Ext.swift in Sources */,
 				D2C746FA25B3E540005435E9 /* ProfileTabCollectionReusableView.swift in Sources */,
 				D230E22C25DCAA56000B71DF /* PostModel.swift in Sources */,
+				D27357E625F9A9F700E1AE1B /* Search.swift in Sources */,
 				D27E7FBB25AB52D7009DD069 /* Extentions.swift in Sources */,
 				D2C18ABD25B68CC4008F35F7 /* WorkoutViewController.swift in Sources */,
 				D22AC3F825A79892003FD975 /* AppDelegate.swift in Sources */,
@@ -785,7 +813,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZW67UK2AS;
 				INFOPLIST_FILE = Fitness/Info.plist;
@@ -797,7 +825,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scottcolas.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -807,7 +835,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6ZW67UK2AS;
 				INFOPLIST_FILE = Fitness/Info.plist;
@@ -819,7 +847,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scottcolas.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -23,11 +23,11 @@ struct UserOld{
     let counts: UserCount
     let joinDate: Date
 }
-struct User{
+/*struct User{
     let username: String
     let profilePictureURL: URL?
     let identifier: String
-}
+}*/
 struct UserCount{
     let followers: Int
     let following: Int

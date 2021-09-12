@@ -9,6 +9,8 @@ import UIKit
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let userMe = User(username: "", email: "")
+    
     private let noNotificationsLabel: UILabel = {
        let label = UILabel()
         label.textColor = .secondaryLabel
@@ -225,10 +227,9 @@ extension NotificationViewController: NotificationsUserFollowTableViewCellDelega
         
     }
 
+
     func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String) {
-        let vc = ProfileViewController2(user: User(username: username,
-                                                   profilePictureURL: nil,
-                                                   identifier: "123"))
+        let vc = ProfileViewController2(user: userMe)
         vc.title = username.uppercased()
         navigationController?.pushViewController(vc, animated: true)
         
@@ -253,17 +254,15 @@ extension NotificationViewController{
         //reslove postmodel from database
         let post = PostModel(
             identifier: UUID().uuidString,
-            user: User(
-                username: "kanyewest",
-                profilePictureURL: nil,
-                identifier: UUID().uuidString
-            ), postType: .photo,
+            user: userMe,
+            postType: .photo,
             likecount: [],
              comments: [],
              createdDate: Date(),
              taggedUsers: [],
             category: BodyPart.abs,
-             owner: User(username: "scolas", profilePictureURL: URL(string: ""), identifier: "test"))
+             owner: userMe
+        )
         let vc = PostViewController(model: post)
         vc.title = "Post"
         navigationController?.pushViewController(vc, animated: true)

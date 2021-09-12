@@ -77,17 +77,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        view.backgroundColor = .systemBackground
+        addSubviews()
         
-        creatAccountButton.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
-        
-        
-        privacyButton.addTarget(self, action: #selector(didTapPrivacyButton), for: .touchUpInside)
         
         usernameEmailField.delegate = self
         passwordField.delegate = self
-        addSubviews()
-        view.backgroundColor = .systemBackground
+        addButtonActions()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -161,6 +158,11 @@ class LoginViewController: UIViewController {
         view.addSubview(creatAccountButton)
         view.addSubview(headerView)
     }
+    private func addButtonActions(){
+        loginButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        creatAccountButton.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
+        privacyButton.addTarget(self, action: #selector(didTapPrivacyButton), for: .touchUpInside)
+    }
     
     @objc func didTapKeyboardDone() {
         usernameEmailField.resignFirstResponder()
@@ -205,8 +207,11 @@ class LoginViewController: UIViewController {
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
         
-        guard let usernameEmail = usernameEmailField.text, !usernameEmail.isEmpty,
-        let passowrd = passwordField.text, !passowrd.isEmpty, passowrd.count >= 8 else{
+        guard let usernameEmail = usernameEmailField.text,
+              let passowrd = passwordField.text,
+              !usernameEmail.trimmingCharacters(in: .whitespaces).isEmpty,
+              !passowrd.trimmingCharacters(in: .whitespaces).isEmpty,
+              passowrd.count >= 8 else{
             return
         }
         

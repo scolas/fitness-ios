@@ -14,17 +14,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        /*AuthManager.shared.signOut { success in
-            if success {
-                print("user log out")
-            } else {
-                print("user not logged out")
-            }
-        }*/
-        
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = TabBarViewController()
+
+      /*  if AuthManager.shared.isSignedIn {
+                window.rootViewController = TabBarViewController()
+                print("user log out")
+            } else {
+                let vc = LoginViewController()
+                let navVc = UINavigationController(rootViewController: vc)
+                window.rootViewController = navVc
+                print("user not logged out")
+            }
+        
+        */
+        
         self.window = window
         self.window?.makeKeyAndVisible()
         
